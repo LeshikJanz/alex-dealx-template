@@ -45,10 +45,6 @@ function* postProductRequest(req) {
   }
 }
 
-function* handleAutoSuggestion(product) {
-
-}
-
 function* getProductSuggestRequest(req) {
   const { payload: { onComplete, ...search } } = req;
   try {
