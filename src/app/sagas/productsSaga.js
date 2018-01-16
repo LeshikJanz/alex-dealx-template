@@ -57,7 +57,7 @@ function* getProductSuggestRequest(req) {
     const suggestedModel =
       data[0].Model.find(({ Make, Model }) =>
       search.search.toLowerCase() === `${Make} ${Model}`.toLowerCase());
-    const autoSuggestion = suggestedMake || suggestedModel;
+    const autoSuggestion = suggestedModel || suggestedMake;
 
     if (autoSuggestion) {
       yield put(templateActions.updateProductSearch({
@@ -65,7 +65,7 @@ function* getProductSuggestRequest(req) {
         model: autoSuggestion.Model,
         level: autoSuggestion.level || 1,
         isSearchable: true
-      }))
+      }));
     }
     onComplete();
   } catch (e) {
