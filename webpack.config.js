@@ -152,7 +152,7 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
-          publicPath: IS_PRODUCTION ? 'http://cars.dvg.com.au/build/webpack/' : '/build/webpack/',
+          publicPath: '/build/webpack/',
           name: 'images/[hash].[ext]'
         },
       },
